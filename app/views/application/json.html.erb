@@ -1,0 +1,50 @@
+<%= form_tag welcome_index_path, method: :post do %>
+  <%= text_field_tag 'q' %>
+  <%= button_tag do %><span>POSTで送る</span><% end %>
+<% end %>
+
+
+coord.lon               = <%= @obj["coord"]["lon"] %> <br>
+coord.lat               = <%= @obj["coord"]["lat"] %> <br>
+
+weather[0].id           = <%= @obj["weather"][0]["id"] %> <br>
+weather[0].main         = <%= @obj["weather"][0]["main"] %> <br>
+weather[0].description  = <%= @obj["weather"][0]["description"] %> <br>
+weather[0].icon         = <%= @obj["weather"][0]["icon"] %> <br>
+
+base                    = <%= @obj["base"] %> <br>
+
+main.id                 = <%= @obj["main"]["temp"] %> <br>
+main.pressure           = <%= @obj["main"]["pressure"] %> <br>
+main.humidity           = <%= @obj["main"]["humidity"] %> <br>
+main.temp_min           = <%= @obj["main"]["temp_min"] %> <br>
+main.temp_max           = <%= @obj["main"]["temp_max"] %> <br>
+
+visibility              = <%= @obj["visibility"] %> <br>
+
+wind.speed              = <%= @obj["wind"]["speed"] %> <br>
+wind.deg                = <%= @obj["wind"]["deg"] %> <br>
+
+clouds.all              = <%= @obj["clouds"]["all"] %> <br>
+
+dt                      = <%= @obj["dt"] %> <br>
+
+sys.type                = <%= @obj["sys"]["type"] %> <br>
+sys.id                  = <%= @obj["sys"]["id"] %> <br>
+sys.message             = <%= @obj["sys"]["message"] %> <br>
+sys.country             = <%= @obj["sys"]["country"] %> <br>
+sys.sunrise             = <%= @obj["sys"]["sunrise"] %> <br>
+sys.sunset              = <%= @obj["sys"]["sunset"] %> <br>
+
+id                      = <%= @obj["id"] %> <br>
+
+name                = <%= @obj["name"] %> <br>
+
+cod                 = <%= @obj["cod"] %> <br>
+
+
+
+
+
+
+
