@@ -1,8 +1,15 @@
-json.html<br>
 
+<%= form_tag('/search')  do %>
+  <%= text_field_tag 'q' %><br>
+  <%= submit_tag 'get weather' %><br>
+  <input type="button" value="地図" 
+      onClick="initialize(<%= @result["coord"]["lat"] %>,<%= @result["coord"]["lon"] %>)">
+
+<% end %>
+<br>
+
+----------------------検索結果<br>
 area = <%= @area %><br>
-<%= debug(@result) %>
-
 
 coord.lon               = <%= @result["coord"]["lon"] %> <br>
 coord.lat               = <%= @result["coord"]["lat"] %> <br>
@@ -41,6 +48,34 @@ id                      = <%= @result["id"] %> <br>
 name                = <%= @result["name"] %> <br>
 
 cod                 = <%= @result["cod"] %> <br>
+
+
+----------------------検索結果<br>
+
+<style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+</style>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script>
+var map;
+function initialize(lat,lng) {
+  map = new google.maps.Map(document.getElementById('map-canvas'), {
+    zoom: 14,
+    center: {lat: lat, lng: lng}
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>    
+
+<div id="map-canvas"></div>
+ 
+
 
 
 
